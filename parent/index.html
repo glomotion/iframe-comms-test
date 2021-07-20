@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Immutable Link" />
+    <title>parent iframe test</title>
+  </head>
+  <body>
+    <iframe
+      src="https://extra-small-icicle.surge.sh"
+      width="300"
+      height="300"
+    ></iframe>
+
+    <h2 id="msgs"></h2>
+
+    <script>
+      const msgs = document.querySelector("#msgs");
+      window.addEventListener(
+        "message",
+        (event) => {
+          const data = event.data;
+          msgs.innerHTML = JSON.stringify(data);
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
