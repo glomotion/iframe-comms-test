@@ -8,12 +8,6 @@
     <title>parent iframe test</title>
   </head>
   <body>
-    <iframe
-      src="https://extra-small-icicle.surge.sh"
-      width="300"
-      height="300"
-    ></iframe>
-
     <h2 id="msgs"></h2>
 
     <script>
@@ -26,6 +20,11 @@
         },
         false
       );
+
+      const iframeDom = document.createElement("iframe");
+      iframeDom.classList.add("imxLinkIframeContainer__iframe");
+      iframeDom.setAttribute("src", "https://extra-small-icicle.surge.sh");
+      document.body.appendChild(iframeDom);
     </script>
   </body>
 </html>
